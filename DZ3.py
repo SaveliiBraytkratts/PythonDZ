@@ -61,7 +61,13 @@ eng_dict = {
     'Q': 10,
     'Z': 10,
 }
-word = str(input('Видите слово: '))
+score = 0
+word = str(input('Видите слово: ').upper())
+length = len(word)
 if(word[0] in ru_dict):
-    print('русский')
-print('английски')
+    for i in range(length):
+        score += ru_dict[word[i]]
+else:
+    for i in range(length):
+        score += eng_dict[word[i]]
+print(score)
