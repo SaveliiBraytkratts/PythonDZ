@@ -1,9 +1,9 @@
 def summ(a, b):
-    number = a
-    for i  in range(b - 1):
-        number = number * a
-    print(number)
+    if b == 0:
+        return 1
+
+    return a * summ(a, b - 1)
 
 elevate = int(input("введите число:"))
 multiplier = int(input("введите в какую степинь возвести:"))
-summ(elevate, multiplier)
+print(summ(elevate, multiplier))
